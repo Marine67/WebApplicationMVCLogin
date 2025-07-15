@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
@@ -26,6 +27,9 @@ namespace WebApplicationMVCLogin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model, string command)
         {
+            Debug.WriteLine("Just Check");
+            //Console.WriteLine("con check");
+            Trace.WriteLine("Tracing Index action entered");
             if (!ModelState.IsValid)
                 return View(model);
 
