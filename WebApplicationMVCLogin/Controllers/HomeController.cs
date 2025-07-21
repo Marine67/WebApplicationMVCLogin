@@ -15,7 +15,7 @@ namespace WebApplicationMVCLogin.Controllers
             _logger = logger;
         }
 
-        //fddfggd
+        //HOME Controller
 
         public IActionResult Index()
         {
