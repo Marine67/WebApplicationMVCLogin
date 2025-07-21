@@ -37,7 +37,7 @@ namespace WebApplicationMVCLogin.Controllers
             {
                 string pwd=HashPassword(model.Password);
                 var user = _ctx.loginViewModels
-                .FirstOrDefault(u => u.Email == model.Email && u.Password == pwd); // Use hashing in prod
+                .FirstOrDefault(u => u.Email == model.Email && u.Password == pwd); 
 
                 if (user == null)
                 {

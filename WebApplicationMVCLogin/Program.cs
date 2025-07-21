@@ -10,15 +10,22 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+//---------------------------------------------------
+
+//SQLSERVER Connection newtest
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+//Login(AddAuthentication)
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
         options.LoginPath = "/Account/Login";
         options.ExpireTimeSpan = TimeSpan.FromHours(1);
     });
+
+//---------------------------------------------------
+
 
 var app = builder.Build();
 
